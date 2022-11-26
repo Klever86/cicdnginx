@@ -18,13 +18,13 @@ jobs:
       name: Login Docker Hub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        username: ${{secrets.DOCKERHUB_USERNAME }}
+        password: ${{secrets.DOCKERHUB_TOKEN }}
     -
       name: Build and push Docker image
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/cimipagina:latest
+        tags: ${{secrets.DOCKERHUB_USERNAME }}/cimipagina:latest
         file: .Dockerfile
         
